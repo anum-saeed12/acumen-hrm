@@ -1,0 +1,8 @@
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav{padding:0 15px;}
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li{}
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li:last-child:after{border-right:none;}
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link{line-height:40px;height:40px;margin:10px 6px 0;padding:0 15px;border-radius:6px;}
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:hover{background:rgba(250,250,250,0.1);}
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link.active,
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:active,
+header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:focus{line-height:50px;height:50px;background:#fff;color:#2f323e;margin-top:10px;border-radius:6px 6px 0 0;}
