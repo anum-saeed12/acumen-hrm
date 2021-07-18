@@ -1,74 +1,78 @@
-<!-- ============================================================== -->
-<!-- Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
 <aside class="left-sidebar" data-sidebarbg="skin6">
-    <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
-        <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <!-- User Profile-->
                 <li class="sidebar-item pt-2">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
                        aria-expanded="false">
-                        <i class="far fa-clock" aria-hidden="true"></i>
-                        <span class="hide-menu">Add Attendance</span>
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Company Details</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
                        aria-expanded="false">
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Company Policy</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
+                       aria-expanded="false">
+                        <i class="far fa-circle" aria-hidden="true"></i>
                         <span class="hide-menu">Add Employee</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
                        aria-expanded="false">
-                        <i class="fa fa-table" aria-hidden="true"></i>
-                        <span class="hide-menu">Add New Holiday</span>
-                    </a>
-                </li>
-                {{--<li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
-                       aria-expanded="false">
-                        <i class="fa fa-font" aria-hidden="true"></i>
-                        <span class="hide-menu">Icon</span>
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Edit Employee</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('department.list.admin') }}"
                        aria-expanded="false">
-                        <i class="fa fa-globe" aria-hidden="true"></i>
-                        <span class="hide-menu">Google Map</span>
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Department</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('designation.list.admin') }}"
                        aria-expanded="false">
-                        <i class="fa fa-columns" aria-hidden="true"></i>
-                        <span class="hide-menu">Blank Page</span>
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Designation</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('division.list.admin') }}"
                        aria-expanded="false">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i>
-                        <span class="hide-menu">Error 404</span>
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Division</span>
                     </a>
-                </li>--}}
-                {{--<li class="text-center p-20 upgrade-btn">
-                    <a href="https://www.wrappixel.com/templates/ampleadmin/"
-                       class="btn d-grid btn-danger text-white" target="_blank">
-                        Upgrade to Pro</a>
-                </li>--}}
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('grade.list.admin') }}"
+                       aria-expanded="false">
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Grade</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('function.list.admin') }}"
+                       aria-expanded="false">
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Function</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('position.list.admin') }}"
+                       aria-expanded="false">
+                        <i class="far fa-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Position</span>
+                    </a>
+                </li>
             </ul>
-
         </nav>
-        <!-- End Sidebar navigation -->
     </div>
-    <!-- End Sidebar scroll-->
 </aside>
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
