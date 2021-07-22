@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.dashboard');
-})->name('dashboard');
+Route::get('/', '\App\Http\Controllers\DefaultController@dashboard')->name('dashboard');
+
+Route::prefix('/employee')->group(function() {
+    Route::get('/', '\App\Http\Controllers\DivisionController@index')->name('employee.index.admin');
+    Route::get('/index', '\App\Http\Controllers\DivisionController@index')->name('employee.list.admin');
+    Route::get('/add', '\App\Http\Controllers\DivisionController@add')->name('employee.add.admin');
+    Route::post('/store', '\App\Http\Controllers\DivisionController@store')->name('employee.store.admin');
+    Route::get('/edit/{id}', '\App\Http\Controllers\DivisionController@edit')->name('employee.edit.admin');
+    Route::post('/update/{id}', '\App\Http\Controllers\DivisionController@update')->name('employee.update.admin');
+    Route::get('/delete/{id}', '\App\Http\Controllers\DivisionController@update')->name('employee.delete.admin');
+});
 
 Route::prefix('/designation')->group(function() {
     Route::get('/', '\App\Http\Controllers\DesignationController@index')->name('designation.index.admin');

@@ -6,3 +6,17 @@ header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:
 header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link.active,
 header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:active,
 header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:focus{line-height:50px;height:50px;background:#fff;color:#2f323e;margin-top:10px;border-radius:6px 6px 0 0;}
+#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link, #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link{
+    text-decoration: none;
+}
+.sidebar-item.dropdown{}
+.sidebar-item.dropdown>a{position:relative;}
+.sidebar-item.dropdown>a>i{position:absolute;right:15px;}
+.sidebar-item.dropdown>a+ul{display:none;margin:0 0 0 15px;padding:0;transition: all .3s;}
+.sidebar-item.dropdown>a+ul>li {width:auto!important;}
+.sidebar-item.dropdown>a+ul a{}
+.sidebar-item.dropdown:hover>a+ul,
+.sidebar-item.dropdown>a.active+ul{display:block;}
+.form-control{width:auto!important;display:inline-block;}
+.input-select {padding: /*.25rem .5rem*/.375rem .75rem;font-size:1rem;font-weight: 400;line-height: 1.5;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;}
+
