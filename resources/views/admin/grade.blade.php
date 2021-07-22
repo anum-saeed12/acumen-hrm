@@ -62,7 +62,7 @@
                             <tbody>
                             @foreach($grade as $item)
                                 <tr>
-                                    <td>{{ $item->grade }}</td>
+                                    <td>{{ ucfirst($item->grade) }}</td>
                                     <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($item->created_at))->format('d-M-Y') }}</td>
                                     <td class="text-right">
                                         <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('grade.edit.admin', $item->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>

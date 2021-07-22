@@ -62,7 +62,7 @@
                             <tbody>
                             @foreach($designation as $design)
                                 <tr>
-                                    <td>{{ $design->designation }}</td>
+                                    <td>{{ ucfirst($design->designation) }}</td>
                                     <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($design->created_at))->format('d-M-Y') }}</td>
                                     <td class="text-right">
                                         <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('designation.edit.admin', $design->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>

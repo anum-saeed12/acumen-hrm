@@ -63,7 +63,7 @@
                             <tbody>
                             @foreach($function as $fun)
                                 <tr>
-                                    <td>{{ $fun->function }}</td>
+                                    <td>{{ ucfirst($fun->function) }}</td>
                                     <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($fun->created_at))->format('d-M-Y') }}</td>
                                     <td class="text-right">
                                         <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('function.edit.admin', $fun->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>

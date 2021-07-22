@@ -75,8 +75,8 @@
                             <tbody>
                             @foreach($position as $item)
                                 <tr>
-                                    <td>{{ $item->position_code }}</td>
-                                    <td>{{ $item->designation->designation }}</td>
+                                    <td>{{ ucfirst($item->position_code) }}</td>
+                                    <td>{{ ucfirst($item->designation->designation) }}</td>
                                     <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($item->created_at))->format('d-M-Y') }}</td>
                                     <td class="text-right">
                                         <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('position.edit.admin', $item->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>

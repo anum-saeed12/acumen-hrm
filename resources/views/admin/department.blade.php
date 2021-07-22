@@ -69,8 +69,8 @@
                             <tbody>
                             @foreach($department as $depart)
                             <tr>
-                                <td>{{ $depart->department }}</td>
-                                <td>{{ $depart->location }}</td>
+                                <td>{{ ucfirst($depart->department) }}</td>
+                                <td>{{ ucfirst($depart->location) }}</td>
                                 <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($depart->created_at))->format('d-M-Y') }}</td>
                                 <td class="text-right">
                                     <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('department.edit.admin', $depart->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>
