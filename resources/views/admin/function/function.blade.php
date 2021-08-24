@@ -1,4 +1,5 @@
 @extends('layouts.main')
+
 @section('breadcrumbs')
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
@@ -13,11 +14,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="row mb-3">
-                <div class="col-sm-3">
-                    <form method="post" action="{{ route('grade.store.admin') }}">
+                <div class="col-md-4">
+                    <form method="post" action="{{ route('function.store.admin') }}">
                         @csrf
                         <div class="input-group">
-                            <input type="text" id="grade" name="grade" class="form-control" placeholder="New Grade" aria-label="Grade" aria-describedby="basic-addon2">
+                            <input type="text" id="function" name="function" class="form-control" placeholder="New Function" aria-label="Function" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary " type="submit">Save</button>
                             </div>
@@ -29,7 +30,7 @@
                 <div class="white-box">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <form action="." method="GET" id="perPage">
+                            <form action="" method="GET" id="perPage">
                                 <label for="perPageCount">Show</label>
                                 <select id="perPageCount" name="count" onchange="$('#perPage').submit();" class="input-select mx-2">
                                     <option value="15"{{ request('count')=='15'?' selected':'' }}>15 rows</option>
@@ -39,10 +40,10 @@
                                 </select>
                             </form>
                         </div>
-                        <div class="offset-md-3 col-md-3">
+                        <div class="offset-md-2 col-sm-4">
                             <form method="Get" action="">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search Grade" aria-label="Search Grade">
+                                    <input type="text" class="form-control" placeholder="Search Function" aria-label="Search Function">
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
                                     </div>
@@ -54,19 +55,19 @@
                         <table id="data" class="table text-nowrap" style="width:100%">
                             <thead>
                             <tr>
-                                <th>Grade</th>
+                                <th>Company Function</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($grade as $item)
+                            @foreach($function as $fun)
                                 <tr>
-                                    <td>{{ ucfirst($item->grade) }}</td>
-                                    <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($item->created_at))->format('d-M-Y') }}</td>
+                                    <td>{{ ucfirst($fun->function) }}</td>
+                                    <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($fun->created_at))->format('d-M-Y') }}</td>
                                     <td class="text-right">
-                                        <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('grade.edit.admin', $item->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>
-                                        <a class="text-danger" href="{{ route('grade.delete.admin', $item->id) }}" ><i class="fas fa-trash-alt" aria-hidden="false"></i></a>
+                                        <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('function.edit.admin', $fun->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>
+                                        <a class="text-danger" href="{{ route('function.delete.admin', $fun->id) }}" ><i class="fas fa-trash-alt" aria-hidden="false"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -74,7 +75,7 @@
                         </table>
                     </div>
                     <div class="d-flex flex-row-reverse">
-                        {!! $grade->links('pagination::bootstrap-4') !!}
+                        {!! $function->links('pagination::bootstrap-4') !!}
                     </div>
                 </div>
             </div>

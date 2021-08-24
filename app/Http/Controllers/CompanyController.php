@@ -5,18 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\Department;
 use App\Models\Grade;
 use App\Models\MenuItem;
+use App\Models\Position;
 use Illuminate\Http\Request;
+use Monarobase\CountryList\CountryList;
+use Monarobase\CountryList\CountryListFacade;
 
-class GradeController extends Controller
+class CompanyController extends Controller
 {
-    public function index()
+    public function policy()
     {
         $grade = Grade::orderBy('id','DESC')->paginate($this->count);
         $menu = MenuItem::where('parent','0')->with('subMenu')->get();
         $departments = Department::all();
-        $title = "Employee Grade";
+        $positions = Position::all();
+        $title = "Company Policy";
 
-        return view('admin.grade.grade',compact('menu','departments','grade','title'));
+        return view('admin.company.company-policy',compact('menu','departments','grade','title','positions'));
+    }
+    public function add()
+    {
+        $grade = Grade::orderBy('id','DESC')->paginate($this->count);
+        $menu = MenuItem::where('parent','0')->with('subMenu')->get();
+        $departments = Department::all();
+        $positions = Position::all();
+        $title = "Company Details";
+
+        return view('admin.company.company-details',compact('menu','departments','grade','title','positions'));
+
     }
 
     public function store(Request $request)

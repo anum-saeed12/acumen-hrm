@@ -16,8 +16,16 @@ class DesignationController extends Controller
         $departments = Department::all();
         $title = "Company Designations";
 
-        return view('admin.designation',compact('menu','departments','designation','title'));
+        return view('admin.designation.designation',compact('menu','departments','designation','title'));
     }
+    public function add()
+    {
+        $data = [
+            'title'    => 'Company Designations',
+        ];
+        return view('admin.designation.designation', $data);
+    }
+
     public function store(Request $request)
     {
         $request->validate([

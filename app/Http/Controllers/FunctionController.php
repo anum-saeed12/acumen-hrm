@@ -16,7 +16,7 @@ class FunctionController extends Controller
         $departments = Department::all();
         $title = "Employee Function";
 
-        return view('admin.function',compact('menu','departments','function','title'));
+        return view('admin.function.function',compact('menu','departments','function','title'));
     }
 
     public function store(Request $request)

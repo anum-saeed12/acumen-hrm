@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('breadcrumbs')
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
@@ -12,30 +11,25 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row mb-3">
-            <div class="col-sm-8">
-                <form class="row g-3" method="post" action="{{ route('department.store.admin') }}">
-                    @csrf
-                    <div class="col-auto">
-                        <label for="department" class="visually-hidden">Department</label>
-                        <input type="text" class="form-control" id="department" name="department" placeholder="Department Name">
-                    </div>
-                    <div class="col-auto">
-                        <label for="location" class="visually-hidden">Location</label>
-                        <input type="text" class="form-control" name="location" id="location" placeholder="Enter Location">
-                    </div>
-                    <div class="col-auto">
-                        <button class="btn btn-primary mb-2" type="submit">Save</button>
-                    </div>
-                </form>
-            </div>
-        </div>
         <div class="row">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <form method="post" action="{{ route('grade.store.admin') }}">
+                        @csrf
+                        <div class="input-group">
+                            <input type="text" id="grade" name="grade" class="form-control" placeholder="New Grade" aria-label="Grade" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary " type="submit">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="col-sm-12">
                 <div class="white-box">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <form action="." method="GET" id="perPage">
+                            <form action="" method="GET" id="perPage">
                                 <label for="perPageCount">Show</label>
                                 <select id="perPageCount" name="count" onchange="$('#perPage').submit();" class="input-select mx-2">
                                     <option value="15"{{ request('count')=='15'?' selected':'' }}>15 rows</option>
@@ -45,10 +39,10 @@
                                 </select>
                             </form>
                         </div>
-                        <div class="offset-md-3 col-md-3">
+                        <div class="offset-md-2 col-sm-4">
                             <form method="Get" action="">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search Department" aria-label="Search department">
+                                    <input type="text" class="form-control" placeholder="Search Grade" aria-label="Search Grade">
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
                                     </div>
@@ -60,29 +54,27 @@
                         <table id="data" class="table text-nowrap" style="width:100%">
                             <thead>
                             <tr>
-                                <th>Department</th>
-                                <th>Location</th>
+                                <th>Grade</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($department as $depart)
-                            <tr>
-                                <td>{{ ucfirst($depart->department) }}</td>
-                                <td>{{ ucfirst($depart->location) }}</td>
-                                <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($depart->created_at))->format('d-M-Y') }}</td>
-                                <td class="text-right">
-                                    <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('department.edit.admin', $depart->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>
-                                    <a class="text-danger" href="{{ route('department.delete.admin', $depart->id) }}" ><i class="fas fa-trash-alt" aria-hidden="false"></i></a>
-                                </td>
-                            </tr>
+                            @foreach($grade as $item)
+                                <tr>
+                                    <td>{{ ucfirst($item->grade) }}</td>
+                                    <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($item->created_at))->format('d-M-Y') }}</td>
+                                    <td class="text-right">
+                                        <a class="text-primary m-2 mb-0 mt-0 ml-0" href="{{ route('grade.edit.admin', $item->id) }}"><i class="fas fa-edit" aria-hidden="false"></i></a>
+                                        <a class="text-danger" href="{{ route('grade.delete.admin', $item->id) }}" ><i class="fas fa-trash-alt" aria-hidden="false"></i></a>
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
                     </div>
-                   <div class="d-flex flex-row-reverse">
-                        {!! $department->links('pagination::bootstrap-4') !!}
+                    <div class="d-flex flex-row-reverse">
+                        {!! $grade->links('pagination::bootstrap-4') !!}
                     </div>
                 </div>
             </div>

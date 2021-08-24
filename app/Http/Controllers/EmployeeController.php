@@ -2,24 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CompanyFunction;
 use App\Models\Department;
 use App\Models\Designation;
+use App\Models\Division;
+use App\Models\Employee;
+use App\Models\Grade;
 use App\Models\MenuItem;
 use App\Models\Position;
 use Illuminate\Http\Request;
 
-class PositionController extends Controller
+class EmployeeController extends Controller
 {
     public function index()
     {
-        $position = Position::with('designation')
-                             ->paginate($this->count);
+    }
+    public function add()
+    {
         $menu = MenuItem::where('parent','0')->with('subMenu')->get();
         $departments = Department::all();
+        $positions = Position::all();
         $designations = Designation::all();
-        $title = "All Positions";
+        $grades = Grade::all();
+        $divisions = Division::all();
+        $functions = CompanyFunction::all();
+        $employees = Employee::all();
 
-        return view('admin.position.position',compact('menu','departments','position','title','designations'));
+        $data = [
+            'title'       => 'Add Employee',
+            'menu'        => $menu,
+            'departments' => $departments,
+            'positions'   => $positions,
+            'desig'       => $designations,
+            'grades'      => $grades,
+            'divisions'   => $divisions,
+            'functions'   => $functions,
+            'employees'   => $employees
+
+
+        ];
+        return view('admin.employee.add', $data);
     }
 
     public function store(Request $request)

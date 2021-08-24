@@ -16,7 +16,15 @@ class DivisionController extends Controller
         $departments = Department::all();
         $title = "Employee Division";
 
-        return view('admin.division',compact('menu','departments','division','title'));
+        return view('admin.division.division',compact('menu','departments','division','title'));
+    }
+
+    public function add()
+    {
+        $data = [
+            'title'    => 'Employee Division',
+        ];
+        return view('admin.division', $data);
     }
 
     public function store(Request $request)

@@ -9,6 +9,10 @@ header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:
 #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link, #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link{
     text-decoration: none;
 }
+.left-sidebar {max-height:100%;overflow:hidden auto;}
+.left-sidebar::-webkit-scrollbar {width: .5em;}
+.left-sidebar::-webkit-scrollbar-track {box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);}
+.left-sidebar::-webkit-scrollbar-thumb {background-color: darkgrey;outline: 1px solid slategrey;}
 .sidebar-item.dropdown{}
 .sidebar-item.dropdown>a{position:relative;}
 .sidebar-item.dropdown>a>i{position:absolute;right:15px;}
@@ -16,7 +20,53 @@ header.topbar>nav.navbar>.navbar-tele>ul.navbar-nav>li>a.nav-link.tele-nav-link:
 .sidebar-item.dropdown>a+ul>li {width:auto!important;}
 .sidebar-item.dropdown>a+ul a{}
 .sidebar-item.dropdown:hover>a+ul,
-.sidebar-item.dropdown>a.active+ul{display:block;}
+.sidebar-item.dropdown>a.active+ul{display:block;;}
 .form-control{width:auto!important;display:inline-block;}
 .input-select {padding: /*.25rem .5rem*/.375rem .75rem;font-size:1rem;font-weight: 400;line-height: 1.5;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;}
 
+.content *:not(h1,h2,h3,h4,h5,h6,blockquote) {
+    font-size:12px;
+}
+
+.hrm-input {
+    padding: 5px;
+    border: 1px solid #a5afb7;
+    line-height: normal;
+    display: block;
+    margin:3px 0;
+    width:100%;
+}
+.hrm-label {
+    padding: 5px 0;
+    line-height: normal;
+    margin: 3px 0;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+.hrm-label.magical {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(calc(-50% - 1px));
+    line-height:13px;
+}
+.custom-columns > div:first-child > .row {margin-right:8px!important;}
+.custom-columns > div:last-child > .row {margin-left:8px!important;}
+.custom-columns > div > .row > div:first-child {padding-right:15px!important;}
+
+.hrm-heading {
+    width: auto;
+    text-align: left;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    position: relative;
+    padding: 0 0 7px 0;
+    background: #fff;
+    border-bottom: 1px dotted #999;
+    /*box-shadow: 0 2px 4px rgba(0,0,0,.1);*/
+}

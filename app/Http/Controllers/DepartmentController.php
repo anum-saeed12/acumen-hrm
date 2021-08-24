@@ -15,8 +15,15 @@ class DepartmentController extends Controller
         $departments = Department::all();
         $title = "Company Departments";
 
-        return view('admin.department', compact('menu','departments','department','title'));
+        return view('admin.department.department', compact('menu','departments','department','title'));
 
+    }
+    public function add()
+    {
+        $data = [
+            'title'    => 'Company Departments',
+        ];
+        return view('admin.department', $data);
     }
 
     public function store(Request $request)

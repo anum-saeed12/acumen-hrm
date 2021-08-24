@@ -8,11 +8,18 @@ use Illuminate\Http\Request;
 
 class DefaultController extends Controller
 {
-    public function dashboard()
+    public function employee()
     {
         $menu = MenuItem::where('parent','0')->with('subMenu')->get();
         $departments = Department::all();
 
-        return view('admin.dashboard', compact('menu','departments'));
+        return view('admin.dashboard.dashboard', compact('menu','departments'));
+    }
+    public function employment()
+    {
+        $menu = MenuItem::where('parent','0')->with('subMenu')->get();
+        $departments = Department::all();
+
+        return view('admin.dashboard.dashboard', compact('menu','departments'));
     }
 }
